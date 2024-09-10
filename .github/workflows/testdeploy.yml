@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.DEPLOY_REMOTE_HOST_PROD }}
           username: ${{ secrets.DEPLOY_REMOTE_USER_PROD }}
           key: ${{ secrets.DEPLOY_KEY_PROD }}
+          passphrase: ${{ secrets.DEPLOY_KEY_PASSPHRASE }}
           port: ${{ secrets.DEPLOY_REMOTE_PORT_PROD }}
           script: |
             echo "This is a file created on $(date)" > /usr/local/akwww_root/www/file.txt
