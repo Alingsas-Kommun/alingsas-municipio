@@ -13,13 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Start SSH Agent and Add Key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY_PROD }}
+          ssh-passphrase: ${{ secrets.DEPLOY_KEY_PASSPHRASE }}
+
       - name: Create .txt file on remote server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_REMOTE_HOST_PROD }}
           username: ${{ secrets.DEPLOY_REMOTE_USER_PROD }}
-          key: ${{ secrets.DEPLOY_KEY_PROD }}
-          passphrase: ${{ secrets.DEPLOY_KEY_PASSPHRASE }}
           port: ${{ secrets.DEPLOY_REMOTE_PORT_PROD }}
           script: |
-            echo "This is a file created on $(date)" > /usr/local/akwww_root/www/filde.txt
+            echo "This is a file created on $(date)" > /usr/local/akwww_r
