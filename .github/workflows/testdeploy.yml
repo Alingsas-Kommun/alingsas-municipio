@@ -22,4 +22,4 @@ jobs:
           passphrase: ${{ secrets.DEPLOY_KEY_PASSPHRASE }}
           port: ${{ secrets.DEPLOY_REMOTE_PORT_PROD }}
           script: |
-            echo "This is a file created on $(date)" > /usr/local/akwww_root/www/fildsde.txt
+            echo "This is a file created on $(date)" > /usr/local/akwww_root/www/dfildsde.txt
