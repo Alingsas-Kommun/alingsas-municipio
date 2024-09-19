@@ -10,14 +10,9 @@
     {
       "type":"composer",
       "url":"https://wpackagist.org"
-    },
-    {
-      "type":"composer",
-      "url":"https://connect.advancedcustomfields.com"
     }
   ],
   "require": {
-    "wpackagist-plugin/authldap": "*",
-    "wpengine/advanced-custom-fields-pro": "6.3.5"
+    "wpackagist-plugin/authldap": "*"
   }
 }
