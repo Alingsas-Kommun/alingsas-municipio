@@ -4,15 +4,29 @@
   "description": "Additions for you own install of municipo.",
   "repositories": [
     {
-      "type":"composer",
-      "url":"https://packagist.org"
+      "type": "composer",
+      "url": "https://packagist.org"
     },
     {
-      "type":"composer",
-      "url":"https://wpackagist.org"
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "the-events-calendar/events-calendar-pro",
+        "version": "5.8.0",
+        "type": "wordpress-plugin",
+        "dist": {
+          "url": "https://evnt.is/fetch-ecp?key=c9fadccac9a9d138f8b84fe76619e86aef50cebe&version=5.8.0",
+          "type": "zip"
+        }
+      }
     }
   ],
   "require": {
-    "wpackagist-plugin/authldap": "*"
+    "wpackagist-plugin/authldap": "*",
+    "the-events-calendar/events-calendar-pro": "5.8.0",
+    "alingsas-kommun/modularity-alingsashero": "dev-master"
   }
 }
