@@ -15,10 +15,10 @@
       "type": "package",
       "package": {
         "name": "the-events-calendar/events-calendar-pro",
-        "version": "5.8.0",
+        "version": "7.1.0",
         "type": "wordpress-plugin",
         "dist": {
-          "url": "https://evnt.is/fetch-ecp?key=c9fadccac9a9d138f8b84fe76619e86aef50cebe&version=5.8.0",
+          "url": "https://evnt.is/fetch-ecp?key=c9fadccac9a9d138f8b84fe76619e86aef50cebe&version=7.1.0",
           "type": "zip"
         }
       }
@@ -26,7 +26,8 @@
   ],
   "require": {
     "wpackagist-plugin/authldap": "*",
-    "the-events-calendar/events-calendar-pro": "5.8.0",
-    "alingsas-kommun/modularity-alingsashero": "dev-master"
+    "the-events-calendar/events-calendar-pro": "7.1.0",
+    "alingsas-kommun/modularity-alingsashero": "dev-master",
+    "wpackagist-plugin/the-events-calendar": "6.7.0"
   }
 }
