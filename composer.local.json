@@ -28,6 +28,7 @@
     "wpackagist-plugin/authldap": "*",
     "the-events-calendar/events-calendar-pro": "7.1.0",
     "alingsas-kommun/modularity-alingsashero": "dev-master",
+    "alingsas-kommun/municipio-customisation": "dev-main",
     "wpackagist-plugin/the-events-calendar": "6.7.0"
   }
 }
