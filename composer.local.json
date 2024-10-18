@@ -25,6 +25,7 @@
     }
   ],
   "require": {
+    "wpackagist-plugin/miniorange-saml-20-single-sign-on":"5.1.9",
     "wpackagist-plugin/authldap": "*",
     "the-events-calendar/events-calendar-pro": "7.1.0",
     "alingsas-kommun/modularity-alingsashero": "dev-master",
