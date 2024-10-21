@@ -25,11 +25,11 @@
     }
   ],
   "require": {
-    "wpackagist-plugin/miniorange-saml-20-single-sign-on":"5.1.9",
+    "wpackagist-plugin/miniorange-saml-20-single-sign-on": "5.1.9",
     "wpackagist-plugin/authldap": "*",
     "the-events-calendar/events-calendar-pro": "7.1.0",
     "alingsas-kommun/modularity-alingsashero": "dev-master",
-    "alingsas-kommun/municipio-customisation": "dev-main",
+    "alingsas-kommun/municipio-customisation": "0.1.1",
     "wpackagist-plugin/the-events-calendar": "6.7.0"
   }
 }
