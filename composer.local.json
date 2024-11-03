@@ -14,11 +14,11 @@
     {
       "type": "package",
       "package": {
-        "name": "the-events-calendar/events-calendar-pro",
-        "version": "7.1.0",
+        "name": "alingsas-kommun/api-event-manager",
+        "version": "1.4.3",
         "type": "wordpress-plugin",
         "dist": {
-          "url": "https://evnt.is/fetch-ecp?key=c9fadccac9a9d138f8b84fe76619e86aef50cebe&version=7.1.0",
+          "url": "plugins/api-event-manager-1.4.3.zip",
           "type": "zip"
         }
       }
@@ -27,10 +27,9 @@
   "require": {
     "wpackagist-plugin/miniorange-saml-20-single-sign-on": "5.1.9",
     "wpackagist-plugin/authldap": "*",
-    "the-events-calendar/events-calendar-pro": "7.1.0",
     "alingsas-kommun/modularity-alingsashero": "dev-master",
-    "alingsas-kommun/municipio-customisation": "0.1.5",
+    "alingsas-kommun/municipio-customisation": "0.1.6",
     "alingsas-kommun/modularity-svg-background": "0.1.0",
-    "wpackagist-plugin/the-events-calendar": "6.7.0"
+    "alingsas-kommun/api-event-manager": "1.4.3"
   }
 }
