@@ -29,7 +29,7 @@
     "wpackagist-plugin/authldap": "*",
     "alingsas-kommun/modularity-alingsashero": "dev-master",
     "alingsas-kommun/municipio-customisation": "0.1.6",
-    "alingsas-kommun/modularity-svg-background": "0.1.0",
+    "alingsas-kommun/modularity-shape-divider": "0.1.1",
     "alingsas-kommun/api-event-manager": "1.4.3"
   }
 }
