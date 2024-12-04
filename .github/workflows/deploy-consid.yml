@@ -3,7 +3,7 @@ name: Build and deploy to considbrs
 on:
   workflow_dispatch:
   push:
-    branches: [consid]
+    branches: [deploy-consid]
     paths-ignore:
       - .github/**
   pull_request:
