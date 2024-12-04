@@ -24,8 +24,7 @@ jobs:
         deploy-host-user: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
         deploy-host-user-key: ${{ secrets.DEPLOY_KEY_CONSID }}
         deploy-host-web-server-user: ${{ secrets.WEB_SERVER_USER_CONSID }}
-        deploy-host-pagecache-path: ${{ secrets.DEPLOY_LS_PAGECACHE_PATH_CONSID }}
         php-version: ${{ secrets.PHP_VERSION }}
-        kill-lsphp: true
-        github-token: ${{ secrets.TOKEN_GITHUB }}
+        kill-lsphp: false
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         acf-url: ${{ secrets.ACF_URL }}
