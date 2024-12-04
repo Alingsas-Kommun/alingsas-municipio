@@ -1,12 +1,12 @@
 name: Build and deploy to considbrs
 
 on:
-  pull_request:
   workflow_dispatch:
   push:
-    branches: [deploy-consid]
+    branches: [consid]
     paths-ignore:
-      - .github/**on:
+      - .github/**
+  pull_request:
 
 jobs:
   build:
