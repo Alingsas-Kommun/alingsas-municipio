@@ -1,0 +1,30 @@
+name: Build and deploy to considbrs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [consid]
+    paths-ignore:
+      - .github/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: helsingborg-stad/municipio-deploy/4.0@master
+      with:
+        deploy-host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
+        deploy-port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
+        deploy-host-path: ${{ secrets.DEPLOY_REMOTE_PATH_CONSID  }}
+        deploy-host-backup-path: ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}
+        deploy-host-user: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
+        deploy-host-user-key: ${{ secrets.DEPLOY_KEY_CONSID }}
+        deploy-host-web-server-user: ${{ secrets.WEB_SERVER_USER_CONSID }}
+        deploy-host-pagecache-path: ${{ secrets.DEPLOY_LS_PAGECACHE_PATH_CONSID }}
+        php-version: ${{ secrets.PHP_VERSION }}
+        kill-lsphp: true
+        github-token: ${{ secrets.TOKEN_GITHUB }}
+        acf-url: ${{ secrets.ACF_URL }}
