@@ -28,8 +28,8 @@
     "wpackagist-plugin/miniorange-saml-20-single-sign-on": "5.1.9",
     "wpackagist-plugin/authldap": "*",
     "alingsas-kommun/modularity-alingsashero": "0.1.6",
-    "alingsas-kommun/municipio-customisation": "0.1.18",
-    "alingsas-kommun/modularity-shape-divider": "0.1.1",
+    "alingsas-kommun/municipio-customisation": "0.1.19",
+    "alingsas-kommun/modularity-shape-divider": "0.1.2",
     "alingsas-kommun/api-event-manager": "1.4.3"
   }
 }
