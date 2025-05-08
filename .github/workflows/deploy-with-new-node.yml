@@ -2,6 +2,8 @@ name: Deploy test with new node
 
 on:
     workflow_dispatch: # Enable manual trigger
+    push:
+      branches: [deploy/node-test]
 
 jobs:
   build:
