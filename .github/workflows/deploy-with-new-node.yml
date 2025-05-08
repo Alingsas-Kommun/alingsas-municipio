@@ -1,0 +1,33 @@
+name: Deploy test with new node
+
+on:
+    workflow_dispatch: # Enable manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: michaelclaesson/municipio-deploy/4.0@dev
+      with:
+        deploy-host: ${{ secrets.DEPLOY_REMOTE_HOST_PROD }}
+        deploy-port: ${{ secrets.DEPLOY_REMOTE_PORT_PROD }}
+        deploy-host-path: ${{ secrets.DEPLOY_REMOTE_PATH_PROD  }}
+        deploy-host-backup-path: ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_PROD }}
+        deploy-host-user: ${{ secrets.DEPLOY_REMOTE_USER_PROD }}
+        deploy-host-user-key: ${{ secrets.DEPLOY_KEY_PROD }}
+        deploy-host-web-server-user: ${{ secrets.WEB_SERVER_USER_PROD }}
+        deploy-host-pagecache-path: ${{ secrets.DEPLOY_LS_PAGECACHE_PATH }}
+        php-version: ${{ secrets.PHP_VERSION }}
+        kill-lsphp: true
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        acf-url: ${{ secrets.ACF_URL }}
+        newrelic-app-id: ${{ secrets.NEWRELIC_APP_ID }}
+        newrelic-api-key: ${{ secrets.NEWRELIC_API_KEY }}
+        sentry-url: ${{ vars.SENTRY_URL }}
+        sentry-org: ${{ vars.SENTRY_ORG }}
+        sentry-version: ${{ vars.SENTRY_VERSION }}
+        sentry-api-key: ${{ secrets.SENTRY_API_KEY }}
+        sentry-env: prod
