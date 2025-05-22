@@ -27,7 +27,7 @@
   "require": {
     "wpackagist-plugin/authldap": "*",
     "alingsas-kommun/modularity-alingsashero": "0.1.6",
-    "alingsas-kommun/municipio-customisation": "0.1.20",
+    "alingsas-kommun/municipio-customisation": "0.1.22",
     "alingsas-kommun/modularity-shape-divider": "0.1.2",
     "alingsas-kommun/api-event-manager": "1.4.3"
   }
