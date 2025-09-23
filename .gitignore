@@ -19,3 +19,8 @@ db/*.sql
 .htaccess
 .devcontainer/.env
 !/.devcontainer/config/.htaccess
+*.pem
+*.key
+*.crt
+franken/Caddyfile
+db/db.sqlite
