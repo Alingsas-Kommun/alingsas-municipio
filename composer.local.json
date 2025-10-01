@@ -15,10 +15,10 @@
       "type": "package",
       "package": {
         "name": "alingsas-kommun/api-event-manager",
-        "version": "1.4.3",
+        "version": "1.5.5",
         "type": "wordpress-plugin",
         "dist": {
-          "url": "plugins/api-event-manager-1.4.3.zip",
+          "url": "plugins/api-event-manager-1.5.5.zip",
           "type": "zip"
         }
       }
@@ -26,9 +26,10 @@
   ],
   "require": {
     "wpackagist-plugin/authldap": "*",
-    "alingsas-kommun/modularity-alingsashero": "0.1.6",
-    "alingsas-kommun/municipio-customisation": "0.1.22",
+    "wpackagist-plugin/worddown": "1.1.1",
+    "alingsas-kommun/modularity-alingsashero": "0.1.7",
+    "alingsas-kommun/municipio-customisation": "0.2.0",
     "alingsas-kommun/modularity-shape-divider": "0.1.2",
-    "alingsas-kommun/api-event-manager": "1.4.3"
+    "alingsas-kommun/api-event-manager": "1.5.5"
   }
 }
