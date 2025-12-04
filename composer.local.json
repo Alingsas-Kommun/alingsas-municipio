@@ -26,10 +26,12 @@
   ],
   "require": {
     "wpackagist-plugin/authldap": "*",
-    "wpackagist-plugin/worddown": "1.1.1",
+    "wpackagist-plugin/worddown": "1.1.2",
+    "alingsas-kommun/api-event-manager": "1.5.5",
+    "alingsas-kommun/modular-ai": "1.0.3",
     "alingsas-kommun/modularity-alingsashero": "0.1.7",
-    "alingsas-kommun/municipio-customisation": "0.2.0",
     "alingsas-kommun/modularity-shape-divider": "0.1.2",
-    "alingsas-kommun/api-event-manager": "1.5.5"
+    "alingsas-kommun/municipio-customisation": "0.3.0-rc.1",
+    "alingsas-kommun/typesense-index": "1.0.1"
   }
 }
