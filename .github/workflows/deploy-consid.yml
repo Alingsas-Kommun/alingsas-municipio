@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches: [deploy-consid]
-    paths-ignore:
-      - .github/**
 
 jobs:
   build:
@@ -14,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: michaelclaesson/municipio-deploy/4.0@dev
+    - uses: helsingborg-stad/municipio-deploy/4.1@master
       with:
         deploy-host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
         deploy-port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
