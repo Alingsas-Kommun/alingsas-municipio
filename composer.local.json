@@ -29,7 +29,7 @@
     "wpackagist-plugin/acf-extended": "0.9.2.3",
     "wpackagist-plugin/worddown": "1.1.2",
     "alingsas-kommun/api-event-manager": "1.5.5",
-    "alingsas-kommun/modular-ai": "1.0.3",
+    "alingsas-kommun/modular-ai": "dev-dev",
     "alingsas-kommun/modularity-alingsashero": "1.1.0",
     "alingsas-kommun/modularity-shape-divider": "1.0.0",
     "alingsas-kommun/municipio-customisation": "0.3.0-rc.2",
