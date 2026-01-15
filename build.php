@@ -45,7 +45,11 @@ $removables = [
     'guide',
     'db',
     '.devcontainer',
-    '.vscode'
+    '.vscode',
+    'install.html',
+    'build-pre.php',
+    'franken',
+    '.composerignore',
 ];
 
 
