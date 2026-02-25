@@ -3,7 +3,7 @@ name: Build and deploy to considbrs (with local merge fix)
 on:
   workflow_dispatch:
   push:
-    branches: [fix/local-merge]
+    branches: [fix/composer-local-merge]
 
 jobs:
   build:
