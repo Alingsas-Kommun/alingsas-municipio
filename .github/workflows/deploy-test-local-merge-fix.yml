@@ -1,0 +1,27 @@
+name: Build and deploy to considbrs (with local merge fix)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [fix/local-merge]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: michaelclaesson/municipio-deploy/4.1@master
+      with:
+        deploy-host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
+        deploy-port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
+        deploy-host-path: ${{ secrets.DEPLOY_REMOTE_PATH_CONSID  }}
+        deploy-host-backup-path: ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}
+        deploy-host-user: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
+        deploy-host-user-key: ${{ secrets.DEPLOY_KEY_CONSID }}
+        deploy-host-web-server-user: ${{ secrets.WEB_SERVER_USER_CONSID }}
+        php-version: ${{ secrets.PHP_VERSION }}
+        kill-lsphp: false
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        acf-url: ${{ secrets.ACF_URL }}

@@ -47,8 +47,12 @@ class ComposerLocalMerge
 
         $localRequirements = $this->getLocalRequirements($localPath);
         
-        if (empty($localRequirements['require']) && empty($localRequirements['require-dev'])) {
-            echo "composer.local.json has no requirements - skipping merge\n";
+        if (
+            empty($localRequirements['require']) &&
+            empty($localRequirements['require-dev']) &&
+            empty($localRequirements['repositories'])
+        ) {
+            echo "composer.local.json has no requirements or repositories - skipping merge\n";
             return;
         }
 
@@ -128,6 +132,24 @@ class ComposerLocalMerge
             echo "✓ Merged " . count($localRequirements['require-dev']) . " require-dev dependencies\n";
         }
 
+        // Step 5: Merge repositories, deduplicating by serialized structure so that
+        // entries already present in composer.json (e.g. packagist.org, wpackagist.org)
+        // are not added a second time.
+        if (!empty($localRequirements['repositories'])) {
+            $existing  = $composer['repositories'] ?? [];
+            $existingKeys = array_map('json_encode', $existing);
+            $added = 0;
+            foreach ($localRequirements['repositories'] as $repo) {
+                if (!in_array(json_encode($repo), $existingKeys, true)) {
+                    $existing[]    = $repo;
+                    $existingKeys[] = json_encode($repo);
+                    $added++;
+                }
+            }
+            $composer['repositories'] = array_values($existing);
+            echo "✓ Merged {$added} new repositories (" . count($localRequirements['repositories']) . " total in local, duplicates skipped)\n";
+        }
+
         $this->writeJson($composerPath, $composer);
         
         // Create flag file to indicate merge was performed
@@ -196,15 +218,16 @@ class ComposerLocalMerge
     }
 
     /**
-     * Get local requirements from composer.local.json
+     * Get local requirements and repositories from composer.local.json
      */
     private function getLocalRequirements(string $path): array
     {
         $data = $this->readJson($path);
         
         return [
-            'require' => $data['require'] ?? [],
-            'require-dev' => $data['require-dev'] ?? []
+            'require'      => $data['require'] ?? [],
+            'require-dev'  => $data['require-dev'] ?? [],
+            'repositories' => $data['repositories'] ?? [],
         ];
     }
 
