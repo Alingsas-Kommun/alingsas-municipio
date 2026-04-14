@@ -2,10 +2,6 @@ name: Create production artefact
 
 on:
   workflow_dispatch:
-  push:
-    branches: [production, master]
-    paths-ignore:
-      - .github/**
 
 jobs:
   build:
