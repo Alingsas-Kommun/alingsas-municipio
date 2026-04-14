@@ -1,7 +1,11 @@
-name: Build and deploy to considbrs
+name: Build and deploy production.
 
 on:
   workflow_dispatch:
+  push:
+    branches: [production, master]
+    paths-ignore:
+      - .github/**
 
 jobs:
   build:
@@ -9,6 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v3
         with:
           node-version: 24.11.1
@@ -94,42 +99,9 @@ jobs:
         run: rm ~/.npmrc
         shell: bash
 
-      - name: The rsync deployment to www-data user.
-        uses: burnett01/rsync-deployments@7.0.1
+      - name: Upload artefact.
+        uses: actions/upload-artifact@v4
         with:
-          switches: -avzrog --ignore-errors --delete --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}/$GITHUB_SHA --exclude="/config" --exclude config-example --exclude wp-content/uploads --exclude wp-content/plugins/gravityforms --exclude wp-content/plugins/wp-schema-pro --exclude track-assets --exclude wp-content/plugins/volontar-wordpress --exclude wp-content/languages --exclude .htaccess --exclude security.txt --exclude wp-content/plugins/local_* --exclude wp-content/mu-plugins/local_* --exclude wp-content/fonts
+          name: production-artefact
           path: .
-          remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_CONSID }}
-          remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
-          remote_user: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
-          remote_key: ${{ secrets.DEPLOY_KEY_CONSID }}
-          remote_port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
-
-      - name: Compress backup files.
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          script: tar --remove-files -zcf ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}/${{ github.sha }}.tar.gz -C ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }} ${{ github.sha }}
-          host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
-          username: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
-          key: ${{ secrets.DEPLOY_KEY_CONSID }}
-          port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
-
-      - name: Delete backups older than 7 days.
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          script: find ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }} -type f -mtime +7 -name '*.tar.gz' -delete
-          host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
-          username: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
-          key: ${{ secrets.DEPLOY_KEY_CONSID }}
-          port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
-
-      - name: Set file permissions.
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          script: |
-            find ${{ secrets.DEPLOY_REMOTE_PATH_CONSID }} -path ${{ secrets.DEPLOY_REMOTE_PATH_CONSID }} -prune -o ! -type l -exec chmod g+r {} +
-            find ${{ secrets.DEPLOY_REMOTE_PATH_CONSID }}/wp-content/uploads -path ${{ secrets.DEPLOY_REMOTE_PATH_CONSID }}/wp-content/uploads -prune -o ! -type l -exec chmod g+rw {} +
-          host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
-          username: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
-          key: ${{ secrets.DEPLOY_KEY_CONSID }}
-          port: ${{ secrets.DEPLOY_REMOTE_PORT_CONSID }}
+          retention-days: 7
