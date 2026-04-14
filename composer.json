@@ -20,7 +20,19 @@
       "wikimedia/composer-merge-plugin": true,
       "php-http/discovery": true
     },
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "audit": {
+      "ignore": {
+        "PKSA-21fb-n1x5-5nf7": {
+          "apply": "block",
+          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-2cx9-ynrq-qdk3": {
+          "apply": "block",
+          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
+        }
+      }
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -177,10 +189,10 @@
     ],
     "update-lockfile": "command -v act >/dev/null 2>&1 || brew install act; act -j composer-update --bind",
     "resolve-conflicts": [
-        "git fetch origin",
-        "git checkout stage",
-        "git merge -X ours --no-edit origin/master || true",
-        "git commit --no-edit || true"
+      "git fetch origin",
+      "git checkout stage",
+      "git merge -X ours --no-edit origin/master || true",
+      "git commit --no-edit || true"
     ]
   }
 }
