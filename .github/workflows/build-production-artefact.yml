@@ -1,4 +1,4 @@
-name: Build and deploy production.
+name: Create production artefact
 
 on:
   workflow_dispatch:
