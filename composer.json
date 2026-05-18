@@ -19,19 +19,7 @@
       "johnpbloch/wordpress-core-installer": true,
       "php-http/discovery": true
     },
-    "optimize-autoloader": true,
-    "audit": {
-      "ignore": {
-        "PKSA-21fb-n1x5-5nf7": {
-          "apply": "block",
-          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
-        },
-        "PKSA-2cx9-ynrq-qdk3": {
-          "apply": "block",
-          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
-        }
-      }
-    }
+    "optimize-autoloader": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
