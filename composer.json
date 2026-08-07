@@ -31,6 +31,30 @@
           "apply": "block",
           "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
         },
+        "PKSA-cv56-2228-pzr6": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-6r8f-nxsb-67bq": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-gh7h-hhy4-byg7": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-mwt3-h9tv-kx78": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-hp6n-n4kz-21wk": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-mckv-s5hg-868k": {
+          "apply": "block",
+          "reason": "Legacy dompdf dependency in Municipio 6.15.13, temporary exception"
+        },
         "PKSA-dwsq-ppd2-mb1x": {
           "apply": "block",
           "reason": "Temporary exception: required transitively by helsingborg-stad/broken-link-detector until it can update symfony/polyfill-intl-idn."
@@ -42,6 +66,12 @@
         "ignore-id": [
           "PKSA-21fb-n1x5-5nf7",
           "PKSA-2cx9-ynrq-qdk3",
+          "PKSA-cv56-2228-pzr6",
+          "PKSA-6r8f-nxsb-67bq",
+          "PKSA-gh7h-hhy4-byg7",
+          "PKSA-mwt3-h9tv-kx78",
+          "PKSA-hp6n-n4kz-21wk",
+          "PKSA-mckv-s5hg-868k",
           "PKSA-dwsq-ppd2-mb1x"
         ]
       }
