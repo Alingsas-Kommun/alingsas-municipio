@@ -25,11 +25,35 @@
       "ignore": {
         "PKSA-21fb-n1x5-5nf7": {
           "apply": "block",
-          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
         },
         "PKSA-2cx9-ynrq-qdk3": {
           "apply": "block",
-          "reason": "Legacy dependency in Municipio 6.15.13, temporary exception"
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-5mzr-szzf-z6cn": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-cqd6-fg4n-nxpf": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-1q6p-sqkj-8mmj": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-mc58-w91n-f5gv": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-t21r-vtr5-3mdz": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
+        },
+        "PKSA-scnn-p8mm-jbft": {
+          "apply": "block",
+          "reason": "Legacy league/commonmark dependency in Municipio 6.15.13, temporary exception"
         },
         "PKSA-cv56-2228-pzr6": {
           "apply": "block",
@@ -66,6 +90,12 @@
         "ignore-id": [
           "PKSA-21fb-n1x5-5nf7",
           "PKSA-2cx9-ynrq-qdk3",
+          "PKSA-5mzr-szzf-z6cn",
+          "PKSA-cqd6-fg4n-nxpf",
+          "PKSA-1q6p-sqkj-8mmj",
+          "PKSA-mc58-w91n-f5gv",
+          "PKSA-t21r-vtr5-3mdz",
+          "PKSA-scnn-p8mm-jbft",
           "PKSA-cv56-2228-pzr6",
           "PKSA-6r8f-nxsb-67bq",
           "PKSA-gh7h-hhy4-byg7",
