@@ -1,0 +1,19 @@
+name: SSH test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Create hello world file over SSH.
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ vars.SSH_TEST_HOST }}
+          username: ${{ vars.SSH_TEST_USER }}
+          key: ${{ secrets.SSH_TEST_KEY }}
+          port: 22
+          fingerprint: ${{ secrets.SSH_TEST_FINGERPRINT }}
+          script: echo "Hello world" > ${{ vars.SSH_TEST_PATH }}/hello-world.txt
