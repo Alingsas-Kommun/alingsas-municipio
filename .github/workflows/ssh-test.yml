@@ -11,9 +11,9 @@ jobs:
       - name: Scan host key from this runner
         id: keyscan
         run: |
-          KEY_LINE=$(ssh-keyscan -t ed25519 -p 22 "${{ vars.SSH_TEST_HOST }}" 2>/dev/null | grep -v '^#')
+          KEY_LINE=$(ssh-keyscan -t ecdsa -p 22 "${{ vars.SSH_TEST_HOST }}" 2>/dev/null | grep -v '^#')
           if [ -z "$KEY_LINE" ]; then
-            echo "::error::ssh-keyscan returned no ed25519 key for ${{ vars.SSH_TEST_HOST }}"
+            echo "::error::ssh-keyscan returned no ecdsa key for ${{ vars.SSH_TEST_HOST }}"
             exit 1
           fi
           FINGERPRINT=$(echo "$KEY_LINE" | ssh-keygen -lf - | awk '{print $2}')
