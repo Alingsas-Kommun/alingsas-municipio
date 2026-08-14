@@ -8,6 +8,18 @@ jobs:
     runs-on: [self-hosted, Linux, X64]
 
     steps:
+      - name: Scan host key from this runner
+        id: keyscan
+        run: |
+          KEY_LINE=$(ssh-keyscan -t ed25519 -p 22 "${{ vars.SSH_TEST_HOST }}" 2>/dev/null | grep -v '^#')
+          if [ -z "$KEY_LINE" ]; then
+            echo "::error::ssh-keyscan returned no ed25519 key for ${{ vars.SSH_TEST_HOST }}"
+            exit 1
+          fi
+          FINGERPRINT=$(echo "$KEY_LINE" | ssh-keygen -lf - | awk '{print $2}')
+          echo "Host key as seen by this runner: $FINGERPRINT"
+          echo "fingerprint=$FINGERPRINT" >> "$GITHUB_OUTPUT"
+
       - name: Create hello world file over SSH.
         uses: appleboy/ssh-action@v1.1.0
         with:
@@ -15,5 +27,5 @@ jobs:
           username: ${{ vars.SSH_TEST_USER }}
           key: ${{ secrets.SSH_TEST_KEY }}
           port: 22
-          fingerprint: ${{ secrets.SSH_TEST_FINGERPRINT }}
+          fingerprint: ${{ steps.keyscan.outputs.fingerprint }}
           script: echo "Hello world" > ${{ vars.SSH_TEST_PATH }}/hello-world.txt
