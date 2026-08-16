@@ -55,11 +55,19 @@ jobs:
           fi
         shell: bash
 
+      - name: Remove duplicate ondrej/php apt source.
+        run: |
+          echo "--- Before ---"
+          grep -rl ondrej /etc/apt/sources.list.d/ || echo "none found"
+          sudo add-apt-repository -y --remove ppa:ondrej/php
+          echo "--- After ---"
+          grep -rl ondrej /etc/apt/sources.list.d/ || echo "none found"
+          sudo apt-get update
+        shell: bash
+
       - name: Raw apt install of PHP 8.3 packages (visible output).
         continue-on-error: true
         run: |
-          sudo add-apt-repository -y ppa:ondrej/php
-          sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
             php8.3-cgi php8.3-cli php8.3-curl php8.3-dev php8.3-fpm php8.3-intl \
             php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-pgsql php8.3-xml php8.3-zip
