@@ -29,7 +29,13 @@
           "PKSA-gh7h-hhy4-byg7": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
           "PKSA-mwt3-h9tv-kx78": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
           "PKSA-hp6n-n4kz-21wk": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
-          "PKSA-mckv-s5hg-868k": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6."
+          "PKSA-mckv-s5hg-868k": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-5mzr-szzf-z6cn": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0.",
+          "PKSA-cqd6-fg4n-nxpf": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0.",
+          "PKSA-1q6p-sqkj-8mmj": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0.",
+          "PKSA-mc58-w91n-f5gv": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0.",
+          "PKSA-t21r-vtr5-3mdz": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0.",
+          "PKSA-scnn-p8mm-jbft": "league/commonmark pinned to exact 2.8.2 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=2.9.0."
         }
       }
     }
