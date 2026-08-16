@@ -20,7 +20,19 @@
       "php-http/discovery": true
     },
     "optimize-autoloader": true,
-    "process-timeout": 21600
+    "process-timeout": 21600,
+    "policy": {
+      "advisories": {
+        "ignore-id": {
+          "PKSA-cv56-2228-pzr6": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-6r8f-nxsb-67bq": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-gh7h-hhy4-byg7": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-mwt3-h9tv-kx78": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-hp6n-n4kz-21wk": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6.",
+          "PKSA-mckv-s5hg-868k": "dompdf/dompdf pinned to exact v3.1.5 by helsingborg-stad/municipio; remove once upstream bumps its pin to >=3.1.6."
+        }
+      }
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
