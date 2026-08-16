@@ -28,13 +28,6 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install missing PHP extensions.
-        run: |
-          php_ver=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')
-          echo "Active PHP version: $php_ver"
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "php$php_ver-imagick"
-        shell: bash
-
       - name: Get Composer Cache Directory.
         id: composer-cache
         run: |
