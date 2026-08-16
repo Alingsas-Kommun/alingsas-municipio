@@ -54,3 +54,13 @@ jobs:
             echo "Docker access: FAILED"
           fi
         shell: bash
+
+      - name: Setup PHP with composer v2 (debug).
+        uses: shivammathur/setup-php@v2
+        continue-on-error: true
+        env:
+          RUNNER_DEBUG: 1
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          php-version: 8.3
+          tools: composer:v2
