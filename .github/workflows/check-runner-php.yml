@@ -1,0 +1,76 @@
+name: Check runner PHP setup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: OS info
+        run: cat /etc/os-release
+        shell: bash
+
+      - name: Remove duplicate ondrej/php apt source.
+        run: |
+          echo "--- Before ---"
+          grep -rl ondrej /etc/apt/sources.list.d/ || echo "none found"
+          sudo add-apt-repository -y --remove ppa:ondrej/php || true
+          echo "--- After ---"
+          grep -rl ondrej /etc/apt/sources.list.d/ || echo "none found"
+          sudo apt-get update
+        shell: bash
+
+      - name: Passwordless sudo check
+        run: |
+          if sudo -n true 2>/dev/null; then
+            echo "Passwordless sudo: OK"
+          else
+            echo "Passwordless sudo: FAILED"
+          fi
+        shell: bash
+
+      - name: PHP binaries present
+        run: |
+          echo "which php:"
+          which php || echo "no php in PATH"
+          echo
+          echo "update-alternatives --list php:"
+          update-alternatives --list php 2>&1 || echo "n/a"
+          echo
+          echo "ls /usr/bin/php*:"
+          ls -la /usr/bin/php* 2>&1 || echo "none found"
+        shell: bash
+
+      - name: Installed PHP version
+        run: |
+          if command -v php >/dev/null 2>&1; then
+            php -v
+          else
+            echo "php command not found"
+          fi
+        shell: bash
+
+      - name: Available PHP packages via apt
+        run: apt-cache policy 'php*' 2>&1 | head -200
+        shell: bash
+
+      - name: Docker socket access check
+        run: |
+          if docker info >/dev/null 2>&1; then
+            echo "Docker access: OK"
+          else
+            echo "Docker access: FAILED"
+          fi
+        shell: bash
+
+      - name: Raw apt install of PHP 8.3 packages (visible output).
+        continue-on-error: true
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            php8.3-cgi php8.3-cli php8.3-curl php8.3-dev php8.3-fpm php8.3-intl \
+            php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-pgsql php8.3-xml php8.3-zip
+          echo "--- which php8.3 ---"
+          which php8.3 || echo "php8.3 still not on PATH"
+        shell: bash
