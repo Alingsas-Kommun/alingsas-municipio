@@ -34,6 +34,7 @@
     "alingsas-kommun/modularity-shape-divider": "dev-migration/municipio-6",
     "alingsas-kommun/municipio-customisation": "dev-migration/municipio-6",
     "considbrs-webdev/modularity-opening-hours": "1.0.0",
-    "considbrs-webdev/typesense-search": "1.4.2"
+    "considbrs-webdev/typesense-search": "1.4.2",
+    "helsingborg-stad/api-event-manager": "3.18.4"
   }
 }
