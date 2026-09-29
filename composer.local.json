@@ -16,6 +16,19 @@
       "url": "https://github.com/Alingsas-Kommun/modularity-shape-divider.git"
     },
     {
+      "type": "package",
+      "package": {
+        "name": "alingsas-kommun/api-event-manager-fork",
+        "version": "dev-dev",
+        "type": "wordpress-plugin",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/Alingsas-Kommun/api-event-manager.git",
+          "reference": "dev"
+        }
+      }
+    },
+    {
       "type": "composer",
       "url": "https://packagist.org"
     },
@@ -35,6 +48,7 @@
     "alingsas-kommun/municipio-customisation": "dev-migration/municipio-6",
     "considbrs-webdev/modularity-opening-hours": "1.1.0",
     "considbrs-webdev/typesense-search": "1.4.2",
-    "helsingborg-stad/api-event-manager": "3.18.4"
+    "helsingborg-stad/api-event-manager": "3.18.4",
+    "alingsas-kommun/api-event-manager-fork": "dev-dev"
   }
 }
