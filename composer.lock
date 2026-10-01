@@ -2022,6 +2022,7 @@
                 "issues": "https://github.com/helsingborg-stad/algolia-index/issues",
                 "source": "https://github.com/helsingborg-stad/algolia-index/tree/3.5.10"
             },
+            "abandoned": true,
             "time": "2026-01-27T10:33:57+00:00"
         },
         {
@@ -2081,6 +2082,7 @@
                 "issues": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon/issues",
                 "source": "https://github.com/helsingborg-stad/algolia-index-js-searchpage-addon/tree/3.6.14"
             },
+            "abandoned": true,
             "time": "2026-03-16T10:29:40+00:00"
         },
         {
@@ -2125,6 +2127,7 @@
                 "issues": "https://github.com/helsingborg-stad/algolia-index-modularity-addon/issues",
                 "source": "https://github.com/helsingborg-stad/algolia-index-modularity-addon/tree/3.1.5"
             },
+            "abandoned": true,
             "time": "2025-12-09T12:50:47+00:00"
         },
         {
