@@ -1,0 +1,10 @@
+# Our security address
+Contact: mailto:it@alingsas.se
+
+# Preferred language is Swedish, but English is also fine.
+Preferred-Languages: sv
+
+# This is the security.txt of alingsas.se
+Canonical: https://www.alingsas.se/security.txt
+
+Expires: 2026-09-30T22:00:00.000Z
