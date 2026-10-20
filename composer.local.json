@@ -24,6 +24,9 @@
         "dist": {
           "url": "plugins/api-event-manager-1.5.6.zip",
           "type": "zip"
+        },
+        "extra": {
+          "installer-name": "api-event-manager-fork"
         }
       }
     },
