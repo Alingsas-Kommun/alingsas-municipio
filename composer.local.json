@@ -20,6 +20,10 @@
       "url": "https://github.com/Alingsas-Kommun/vastsverige-events.git"
     },
     {
+      "type": "vcs",
+      "url": "https://github.com/Considbrs-Webdev/event-manager-extended.git"
+    },
+    {
       "type": "package",
       "package": {
         "name": "alingsas-kommun/api-event-manager",
@@ -56,6 +60,7 @@
     "considbrs-webdev/modularity-opening-hours": "1.1.0",
     "considbrs-webdev/typesense-search": "1.4.2",
     "helsingborg-stad/api-event-manager": "3.18.4",
-    "alingsas-kommun/api-event-manager": "1.5.6"
+    "alingsas-kommun/api-event-manager": "1.5.6",
+    "municipio-se/event-manager-extended": "dev-main"
   }
 }
