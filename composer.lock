@@ -754,6 +754,40 @@
             "time": "2024-06-24T20:46:46+00:00"
         },
         {
+            "name": "considbrs/event-manager-extended",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Considbrs-Webdev/event-manager-extended.git",
+                "reference": "880507a3cd099ec0509d83db425982955d5339f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Considbrs-Webdev/event-manager-extended/zipball/880507a3cd099ec0509d83db425982955d5339f9",
+                "reference": "880507a3cd099ec0509d83db425982955d5339f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "EventManagerExtended\\": "source/php/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Review workflow for Events synced via Municipio External Content",
+            "support": {
+                "source": "https://github.com/Considbrs-Webdev/event-manager-extended/tree/main",
+                "issues": "https://github.com/Considbrs-Webdev/event-manager-extended/issues"
+            },
+            "time": "2026-10-21T09:03:46+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "source": {
@@ -6512,40 +6546,6 @@
             "time": "2026-07-06T18:56:19+00:00"
         },
         {
-            "name": "municipio-se/event-manager-extended",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Considbrs-Webdev/event-manager-extended.git",
-                "reference": "6cea1f417845de0b0bc0a72cad620c3dcfcbd249"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Considbrs-Webdev/event-manager-extended/zipball/6cea1f417845de0b0bc0a72cad620c3dcfcbd249",
-                "reference": "6cea1f417845de0b0bc0a72cad620c3dcfcbd249",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0"
-            },
-            "default-branch": true,
-            "type": "wordpress-plugin",
-            "autoload": {
-                "psr-4": {
-                    "EventManagerExtended\\": "source/php/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Review workflow for Events synced via Municipio External Content",
-            "support": {
-                "source": "https://github.com/Considbrs-Webdev/event-manager-extended/tree/main",
-                "issues": "https://github.com/Considbrs-Webdev/event-manager-extended/issues"
-            },
-            "time": "2026-10-21T08:21:21+00:00"
-        },
-        {
             "name": "municipio-se/modularity-noticeboard",
             "version": "1.1.0",
             "source": {
@@ -9934,7 +9934,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "municipio-se/event-manager-extended": 20
+        "considbrs/event-manager-extended": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
