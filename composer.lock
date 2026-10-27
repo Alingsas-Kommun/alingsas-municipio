@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7509d0bc9ffb314e3d2626e5214879a1",
+    "content-hash": "85c1aa823206fc8d8ae218c35d40b567",
     "packages": [
         {
             "name": "adbario/php-dot-notation",
@@ -133,6 +133,18 @@
                 "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.3.0"
             },
             "time": "2022-07-06T14:08:05+00:00"
+        },
+        {
+            "name": "alingsas-kommun/api-event-manager",
+            "version": "1.5.6",
+            "dist": {
+                "type": "zip",
+                "url": "plugins/api-event-manager-1.5.6.zip"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "api-event-manager-fork"
+            }
         },
         {
             "name": "astrotomic/php-deepface",
@@ -3488,16 +3500,16 @@
         },
         {
             "name": "helsingborg-stad/modularity-frontend-form",
-            "version": "0.84.18",
+            "version": "0.83.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/modularity-frontend-form.git",
-                "reference": "d28acd874e1994db90e05388c659c29df6115379"
+                "reference": "807f06a1e88527925df0f9ff3888166cb064644f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/modularity-frontend-form/zipball/d28acd874e1994db90e05388c659c29df6115379",
-                "reference": "d28acd874e1994db90e05388c659c29df6115379",
+                "url": "https://api.github.com/repos/helsingborg-stad/modularity-frontend-form/zipball/807f06a1e88527925df0f9ff3888166cb064644f",
+                "reference": "807f06a1e88527925df0f9ff3888166cb064644f",
                 "shasum": ""
             },
             "require": {
@@ -3535,9 +3547,9 @@
             "description": "Frontend Form for Modularity.",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/modularity-frontend-form/issues",
-                "source": "https://github.com/helsingborg-stad/modularity-frontend-form/tree/0.84.18"
+                "source": "https://github.com/helsingborg-stad/modularity-frontend-form/tree/0.83.14"
             },
-            "time": "2026-10-19T06:54:35+00:00"
+            "time": "2026-07-13T09:25:39+00:00"
         },
         {
             "name": "helsingborg-stad/modularity-guides",
@@ -9887,12 +9899,12 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.0 || ^8.1.0 || ^8.2.0 || ^8.3.0"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
