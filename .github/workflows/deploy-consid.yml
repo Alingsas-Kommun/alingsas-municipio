@@ -108,7 +108,7 @@ jobs:
       - name: Compress backup files.
         uses: appleboy/ssh-action@v1.1.0
         with:
-          script: tar --remove-files -zcf ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}/${{ github.sha }}.tar.gz -C ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }} ${{ github.sha }}
+          script: tar -zcf ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}/${{ github.sha }}.tar.gz -C ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }} ${{ github.sha }} && rm -rf ${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_CONSID }}/${{ github.sha }}
           host: ${{ secrets.DEPLOY_REMOTE_HOST_CONSID }}
           username: ${{ secrets.DEPLOY_REMOTE_USER_CONSID }}
           key: ${{ secrets.DEPLOY_KEY_CONSID }}
