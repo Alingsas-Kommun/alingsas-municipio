@@ -43,8 +43,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
-      - name: Validate composer.json and composer.lock.
-        run: composer validate
+      # The next step merges composer.local.json and deletes composer.lock, so install resolves from the merged json.
+      - name: Validate composer.json.
+        run: composer validate --no-check-lock
         shell: bash
 
       - name: Merge composer.local.json (pre-install).
