@@ -44,8 +44,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
-      - name: Validate composer.json and composer.lock.
-        run: composer validate
+      # The next step merges composer.local.json and deletes composer.lock, so install resolves from the merged json.
+      - name: Validate composer.json.
+        run: composer validate --no-check-lock
         shell: bash
 
       - name: Merge composer.local.json (pre-install).
@@ -109,7 +110,7 @@ jobs:
       - name: Compress backup files.
         uses: appleboy/ssh-action@v1.1.0
         with:
-          script: tar --remove-files -zcf ${{ vars.DEPLOY_REMOTE_BACKUP_DIR }}/${{ github.sha }}.tar.gz -C ${{ vars.DEPLOY_REMOTE_BACKUP_DIR }} ${{ github.sha }}
+          script: tar -zcf ${{ vars.DEPLOY_REMOTE_BACKUP_DIR }}/${{ github.sha }}.tar.gz -C ${{ vars.DEPLOY_REMOTE_BACKUP_DIR }} ${{ github.sha }} && rm -rf ${{ vars.DEPLOY_REMOTE_BACKUP_DIR }}/${{ github.sha }}
           host: ${{ vars.DEPLOY_REMOTE_HOST }}
           username: ${{ vars.DEPLOY_REMOTE_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
