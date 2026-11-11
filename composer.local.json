@@ -51,7 +51,7 @@
     "alingsas-kommun/modular-ai": "1.0.9",
     "alingsas-kommun/modularity-alingsashero": "dev-codex/styleguide-v3-button-template",
     "alingsas-kommun/modularity-shape-divider": "dev-migration/municipio-6",
-    "alingsas-kommun/municipio-customisation": "dev-migration/municipio-6",
+    "alingsas-kommun/municipio-customisation": "1.2.0",
     "alingsas-kommun/vastsverige-events": "0.1.1",
     "considbrs-webdev/modularity-opening-hours": "1.1.0",
     "considbrs-webdev/typesense-search": "1.10.2",
